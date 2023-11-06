@@ -1,4 +1,4 @@
-## Project 1: Wellness Dashboard
+## Project: Wellness Dashboard
 
 Welcome to my Power BI project, "Wellness Dashboard". This project showcases my data visualization and reporting skills using Power BI.
 
