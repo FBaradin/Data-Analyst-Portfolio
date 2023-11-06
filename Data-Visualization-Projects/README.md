@@ -9,6 +9,7 @@ Welcome to my Data Visualization Projects folder! This section showcases various
  
 - Google Looker Studio projects
   + [Project: Tickets analysis](https://github.com/FBaradin/Data-Analyst-Portfolio/blob/main/Data-Visualization-Projects/Tickets-analysis.md)
+
 <br>
 
 ## Project: Wellness Dashboard
@@ -30,6 +31,7 @@ Welcome to my Data Visualization Projects folder! This section showcases various
 - **Repository:** [Project: Tickets analysis](https://github.com/FBaradin/Data-Analyst-Portfolio/blob/main/Data-Visualization-Projects/Tickets-analysis.md)
 
 Feel free to explore the projects and click on the provided links to see more details and visualizations. If you have any questions or feedback, please don't hesitate to reach out to me.
+
 <br>
 
 ## Contact Information
