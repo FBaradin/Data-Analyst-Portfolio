@@ -3,7 +3,7 @@
 Welcome to my Data Visualization Projects folder! This section showcases various data visualization projects I have worked on. Data visualization is a powerful way to convey insights and tell stories from data.
 
 ## Table of Contents
-- [Project 1: Wellness Dashboard]
+- Project 1: Wellness Dashboard
 
 ## Project 1: Project Title
 - **Description:** This interactive dashboard was designed to monitor and visualize my progress in achieving health and fitness goals by tracking food intake and exercise accomplishments.
