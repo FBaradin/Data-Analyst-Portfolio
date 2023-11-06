@@ -18,8 +18,8 @@ Welcome to my Power BI project, "Wellness Dashboard". This project showcases my 
 
 ## Contact Information
 
-- **Email:** f.baradin@gmail.com (mailto:f.baradin@gmail.com)
-- **LinkedIn:** Francisco Baradín (https://www.linkedin.com/in/franciscobaradin13256664/)
+- **Email:** [f.baradin@gmail.com](mailto:f.baradin@gmail.com)
+- **LinkedIn:** [Francisco Baradín](https://www.linkedin.com/in/franciscobaradin13256664/)
 
 Feel free to reach out if you have any questions or feedback.
 
