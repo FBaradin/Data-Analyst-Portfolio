@@ -11,7 +11,7 @@ Also, there is a date slider to narrow the data range we want to display.
 - **Report and Dashboard:** Here you can take a look at the dashboard:
 
 <a href="https://app.powerbi.com/view?r=eyJrIjoiM2U2OGMyYjAtYzMyMi00Yzk3LTgyNGYtMGNhZjBkZTQ0NmUxIiwidCI6IjI1NmQ1MThiLTVkNDQtNDExZS04MDZmLTc3ZTEzYmFjYWRhNyIsImMiOjR9" target="_blank">Power BI dashboard</a>
-(/images/Fuel-consumption.png)
+![Alt Text](/images/Fuel-consumption.png)
 
 - **Tools Used:** In addition with Power BI, Microsoft Excel was used to gather the data collected from different apps. The spreadsheet is hosted in OneDrive so online updates can be made across multiple devices.
 
