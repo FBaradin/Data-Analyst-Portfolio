@@ -4,7 +4,9 @@ Welcome to my Power BI project, "Fuel consumption". This project showcases my da
 
 - **Project Description:** This interactive dashboard was designed to monitor and visualize my personal fuel consumption by tracking money spent on fuel and travelled distances. All the data was collected manually.
 
-- **Key Visualizations:** There are 2 main visuals within the dashboard: driven km per fuel liter, and cost of driven km. Also, there are 4 scorecards with important information of single statistics.  
+- **Key Visualizations:** I decided to use 4 different cards to display the main aspects of the analyzed data: km per day, number of days between tank fillings, km per fuel tank, money per day of fuel consumption.
+Apart from that, I used 2 line charts to display on one side the driven km per fuel liter with an average line and on the other side the total cost per driven km with the option to see the historical price of each liter of fuel.
+Also, there is a date slider to narrow the data range we want to display.  
 
 - **Report and Dashboard:** Here you can take a look at the dashboard:
 
@@ -14,7 +16,13 @@ Welcome to my Power BI project, "Fuel consumption". This project showcases my da
 
 - **Data Model:** This dashboard uses a single table containing all the necessary data. The model is pretty simple because the focus of this project was to showcase the visual aspect of the tool.
 
-- **Further Development:** The next step is to compare my results with other people results. 
+- **Valuable Insights:** The first insight to notice is that I'm driving almost 30 km per day, that means that I need to fill my fuel tank every 13 days. This also means that I'm driving a little bit more between tank fillings, because I try to fill it every 300 km but apparently I'm taking a little bit longer to do it (368 km). I'm spending almost ₡2.050 per day in gasoline, which now that I think about it, it's a lot.
+Another interesting insight comes from the "Driven km per fuel liter" chart. As we can see, each liter of fuel makes me be able to drive around 13 km. But the interesting part comes from the data between May and July, where I lived in a very flat part of my country (Costa Rica), which made the car able to travel more with the same amount of fuel.
+
+Finally, in the cost of driven km we can notice how the cost decreased since November, which makes sense because that's when the fuel prices decreased in my country.
+
+- **Further Development:** As we discussed earlier, this dataset contains a very limited amount of data. The next step for this project would be to add more information about different cars and people with different driving habits.
+In that way, we could make comparisons between car models, engine size or driver's efficiency.
 
 ## Contact Information
 
