@@ -4,16 +4,16 @@ Welcome to my Data Visualization Projects folder! This section showcases various
 
 ## Table of Contents
 - Power BI projects
-  + [Project 1: Wellness Dashboard](https://github.com/FBaradin/Data-Analyst-Portfolio/blob/main/Data-Visualization-Projects/Wellness-Dashboard.md)
-  + [Project 2: Fuel consumption](https://github.com/FBaradin/Data-Analyst-Portfolio/blob/main/Data-Visualization-Projects/Fuel-Consumption.md)
+  + [Project: Wellness Dashboard](https://github.com/FBaradin/Data-Analyst-Portfolio/blob/main/Data-Visualization-Projects/Wellness-Dashboard.md)
+  + [Project: Fuel consumption](https://github.com/FBaradin/Data-Analyst-Portfolio/blob/main/Data-Visualization-Projects/Fuel-Consumption.md)
 
-## Project 1: Wellness Dashboard
+## Project: Wellness Dashboard
 - **Description:** This interactive dashboard was designed to monitor and visualize my progress in achieving health and fitness goals by tracking food intake and exercise accomplishments.
 - **Tools and Technologies:** Power BI, Excel, Huawei Health, Seca MyAnalytics.
 - **Key Visuals:** Food intake, exercise accomplishments, sleep patterns.
 - **Code Repository:** [Project 1: Wellness Dashboard](https://github.com/FBaradin/Data-Analyst-Portfolio/blob/main/Data-Visualization-Projects/Wellness-Dashboard.md).
 
-## Project 2: Fuel consumption
+## Project: Fuel consumption
 - **Description:** This interactive dashboard was designed to monitor and visualize my personal fuel consumption by tracking money spent on fuel and travelled distances.
 - **Tools and Technologies:** Power BI, Excel.
 - **Key Visuals:** Driven km per fuel liter, Total cost per driven km.
