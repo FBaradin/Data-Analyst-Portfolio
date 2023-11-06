@@ -5,7 +5,7 @@ Welcome to my Data Visualization Projects folder! This section showcases various
 ## Table of Contents
 - Project 1: Wellness Dashboard
 
-## Project 1: Project Title
+## Project 1: Wellness Dashboard
 - **Description:** This interactive dashboard was designed to monitor and visualize my progress in achieving health and fitness goals by tracking food intake and exercise accomplishments.
 - **Tools and Technologies:** Power BI, Excel, Huawei Health, Seca MyAnalytics.
 - **Key Visuals:** Food intake, exercise accomplishments, sleep patterns.
