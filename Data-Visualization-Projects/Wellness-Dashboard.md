@@ -8,7 +8,7 @@ Welcome to my Power BI project, "Wellness Dashboard". This project showcases my 
 
 - **Report and Dashboard:** Here you can take a look at the dashboard:
 
-[Power BI dashboard](https://app.powerbi.com/view?r=eyJrIjoiNTlhMTg5NGQtMDBhNC00ZmQ4LTkyYzUtN2U0MWJlZWQ5MTJlIiwidCI6IjI1NmQ1MThiLTVkNDQtNDExZS04MDZmLTc3ZTEzYmFjYWRhNyIsImMiOjR9)
+<a href="https://app.powerbi.com/view?r=eyJrIjoiNTlhMTg5NGQtMDBhNC00ZmQ4LTkyYzUtN2U0MWJlZWQ5MTJlIiwidCI6IjI1NmQ1MThiLTVkNDQtNDExZS04MDZmLTc3ZTEzYmFjYWRhNyIsImMiOjR9" target="_blank">Power BI dashboard</a>
 
 - **Tools Used:** In addition with Power BI, Microsoft Excel was used to gather the data collected from different apps. The spreadsheet is hosted in OneDrive so online updates can be made across multiple devices.
 
