@@ -1,4 +1,4 @@
-## Project 2: Fuel consumption
+## Project: Fuel consumption
 
 Welcome to my Power BI project, "Fuel consumption". This project showcases my data visualization and reporting skills using Power BI.
 
