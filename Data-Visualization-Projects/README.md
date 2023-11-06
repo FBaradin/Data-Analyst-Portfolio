@@ -6,18 +6,27 @@ Welcome to my Data Visualization Projects folder! This section showcases various
 - Power BI projects
   + [Project: Wellness Dashboard](https://github.com/FBaradin/Data-Analyst-Portfolio/blob/main/Data-Visualization-Projects/Wellness-Dashboard.md)
   + [Project: Fuel consumption](https://github.com/FBaradin/Data-Analyst-Portfolio/blob/main/Data-Visualization-Projects/Fuel-Consumption.md)
+ 
+- Google Looker Studio projects
+  + [Project: Tickets analysis](https://github.com/FBaradin/Data-Analyst-Portfolio/blob/main/Data-Visualization-Projects/Tickets-analysis.md)
 
 ## Project: Wellness Dashboard
 - **Description:** This interactive dashboard was designed to monitor and visualize my progress in achieving health and fitness goals by tracking food intake and exercise accomplishments.
 - **Tools and Technologies:** Power BI, Excel, Huawei Health, Seca MyAnalytics.
 - **Key Visuals:** Food intake, exercise accomplishments, sleep patterns.
-- **Code Repository:** [Project 1: Wellness Dashboard](https://github.com/FBaradin/Data-Analyst-Portfolio/blob/main/Data-Visualization-Projects/Wellness-Dashboard.md).
+- **Code Repository:** [Project: Wellness Dashboard](https://github.com/FBaradin/Data-Analyst-Portfolio/blob/main/Data-Visualization-Projects/Wellness-Dashboard.md).
 
 ## Project: Fuel consumption
 - **Description:** This interactive dashboard was designed to monitor and visualize my personal fuel consumption by tracking money spent on fuel and travelled distances.
 - **Tools and Technologies:** Power BI, Excel.
 - **Key Visuals:** Driven km per fuel liter, Total cost per driven km.
-- **Code Repository:** [Project 2: Fuel consumption](https://github.com/FBaradin/Data-Analyst-Portfolio/blob/main/Data-Visualization-Projects/Fuel-Consumption.md)
+- **Code Repository:** [Project: Fuel consumption](https://github.com/FBaradin/Data-Analyst-Portfolio/blob/main/Data-Visualization-Projects/Fuel-Consumption.md)
+
+## Project: Tickets analysis
+- **Description:** This is a real world example, where we had the necessity to analyze our current scenario regarding tickets resolution and potential SLA's infringements.
+- **Tools and Technologies:** Google Looker Studio, Google Sheets, Jira.
+- **Key Visuals:** Tickets by client, tickets by agent, and tickets summary by week.
+- **Code Repository:** [Project: Tickets analysis](https://github.com/FBaradin/Data-Analyst-Portfolio/blob/main/Data-Visualization-Projects/Tickets-analysis.md)
 
 Feel free to explore the projects and click on the provided links to see more details and visualizations. If you have any questions or feedback, please don't hesitate to reach out to me.
 
