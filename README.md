@@ -3,5 +3,4 @@ Welcome to my Data Analyst Portfolio! Here you can explore a collection of my da
 
 - [Resume](/Resume-FrBaradin.pdf)
 - [Data Visualization Projects](/Data-Visualization-Projects) 
-- [Python](/Python)
 
