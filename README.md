@@ -3,4 +3,4 @@ Welcome to my Data Analyst Portfolio! Here you can explore a collection of my da
 
 - [Resume](/Resume-FrBaradin.pdf)
 - [Data Visualization Projects](/Data-Visualization-Projects) 
-
+- [AI Job Application Assistant](https://github.com/FBaradin/ai-job-application-assistant): an AI-assisted job-fit reviewer built on Claude Code. It scores job postings against your profile and builds tailored resumes. Free to download and use ([getting started guide](https://github.com/FBaradin/ai-job-application-assistant/blob/main/docs/GETTING_STARTED.md)).
