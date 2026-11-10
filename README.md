@@ -1,6 +1,6 @@
 # Data-Analyst-Portfolio
 Welcome to my Data Analyst Portfolio! Here you can explore a collection of my data-driven projects, where I transform raw data into actionable insights. From interactive Power BI dashboards to Google Looker Studio projects, each one of them showcases my expertise in data analysis, visualization, and problem-solving. Dive into these examples to see how I turn data into value by using the tools Data Analysts use. 
 
-- [Resume](/Resume-FrBaradin.pdf)
+- [Resume](/Resume)
 - [Data Visualization Projects](/Data-Visualization-Projects) 
 - [AI Job Application Assistant](https://github.com/FBaradin/ai-job-application-assistant): an AI-assisted job-fit reviewer built on Claude Code. It scores job postings against your profile and builds tailored resumes. Free to download and use ([getting started guide](https://github.com/FBaradin/ai-job-application-assistant/blob/main/docs/GETTING_STARTED.md)).
