@@ -8,11 +8,6 @@ table Tabla1
 		summarizeBy: none
 		sourceColumn: Fecha
 
-		variation Variation
-			isDefault
-			relationship: 4344d734-9504-434d-8629-8b978e072f7d
-			defaultHierarchy: LocalDateTable_fca5b9ea-f749-4411-8ec6-87073fbc7b3f.'Jerarquía de fechas'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date

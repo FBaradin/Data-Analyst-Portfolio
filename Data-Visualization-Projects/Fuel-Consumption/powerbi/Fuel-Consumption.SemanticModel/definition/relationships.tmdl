@@ -1,5 +1,0 @@
-relationship 4344d734-9504-434d-8629-8b978e072f7d
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Tabla1.Fecha
-	toColumn: LocalDateTable_fca5b9ea-f749-4411-8ec6-87073fbc7b3f.Date
-
