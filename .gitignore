@@ -1,0 +1,6 @@
+# Power BI Project: local cache and user settings (not shared)
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Excel temporary lock files
+~$*
