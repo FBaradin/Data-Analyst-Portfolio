@@ -3,10 +3,13 @@ table Refuels
 
 	column Date
 		dataType: dateTime
+		isHidden
 		formatString: Long Date
 		lineageTag: 0b7f0aa9-b05b-445c-b512-747f0e5eaa5b
 		summarizeBy: none
 		sourceColumn: Date
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

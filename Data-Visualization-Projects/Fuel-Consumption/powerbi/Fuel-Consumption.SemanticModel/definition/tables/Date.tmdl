@@ -1,0 +1,95 @@
+table Date
+	lineageTag: 527f7e8e-efe7-499f-9d00-6024024c6215
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: General Date
+		lineageTag: 4d93f53a-0cd1-4c90-bf6e-001c83fe8dda
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: 2777e03b-6650-4630-8927-4eef23691cc5
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = User
+
+	column Quarter
+		lineageTag: f7bc1946-0e3c-4fa5-b27e-2e57a0759718
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		formatString: 0
+		lineageTag: ce9d100b-b7ba-48e5-8204-e153bc5eaad6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month Number]
+
+		annotation SummarizationSetBy = User
+
+	column Month
+		lineageTag: 3896f47a-fe4c-4b94-a98a-d5e8ba1a06df
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+		sortByColumn: 'Month Number'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year-Month
+		lineageTag: ce1cb98e-58f2-449d-a7ca-b82db5c2c8c5
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year-Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Weekday Number'
+		formatString: 0
+		lineageTag: 98f1ed39-895a-472b-89ee-6dbf614e478a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Weekday Number]
+
+		annotation SummarizationSetBy = User
+
+	column Weekday
+		lineageTag: 2bc03de1-c863-4d82-87a4-70c599b009a0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Weekday]
+		sortByColumn: 'Weekday Number'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = calculated
+		mode: import
+		source =
+				
+				VAR MinDate = DATE ( YEAR ( MIN ( Refuels[Date] ) ), 1, 1 )
+				VAR MaxDate = DATE ( YEAR ( MAX ( Refuels[Date] ) ), 12, 31 )
+				RETURN
+				    ADDCOLUMNS (
+				        CALENDAR ( MinDate, MaxDate ),
+				        "Year", YEAR ( [Date] ),
+				        "Quarter", "Q" & QUARTER ( [Date] ),
+				        "Month Number", MONTH ( [Date] ),
+				        "Month", FORMAT ( [Date], "MMM", "en-US" ),
+				        "Year-Month", FORMAT ( [Date], "YYYY-MM" ),
+				        "Weekday Number", WEEKDAY ( [Date], 2 ),
+				        "Weekday", FORMAT ( [Date], "ddd", "en-US" )
+				    )
+
+	annotation PBI_Id = 3f447249b5e44f0189413048866627ae
+

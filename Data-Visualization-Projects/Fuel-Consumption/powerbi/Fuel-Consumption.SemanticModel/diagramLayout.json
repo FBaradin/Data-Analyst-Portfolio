@@ -18,7 +18,20 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 466,
+            "y": 2
+          },
+          "nodeIndex": "Date",
+          "nodeLineageTag": "527f7e8e-efe7-499f-9d00-6024024c6215",
+          "size": {
+            "height": 328,
+            "width": 234
+          },
+          "zIndex": 2
         }
       ],
       "name": "Todas las tablas",
