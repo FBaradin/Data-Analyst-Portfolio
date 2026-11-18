@@ -1,0 +1,7 @@
+expression FilePath = "C:\Users\User\Projects\Data-Analyst-Portfolio\Data-Visualization-Projects\Fuel-Consumption\data\fuel-log.xlsx" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: ff6ae3aa-99d1-4201-95c4-62eb0dbd1cf6
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Text
+

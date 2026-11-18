@@ -1,0 +1,117 @@
+table Tabla1
+	lineageTag: 3334f5ef-3bdf-4e1a-84d8-23f41a3299bf
+
+	column Fecha
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0b7f0aa9-b05b-445c-b512-747f0e5eaa5b
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		variation Variation
+			isDefault
+			relationship: 4344d734-9504-434d-8629-8b978e072f7d
+			defaultHierarchy: LocalDateTable_fca5b9ea-f749-4411-8ec6-87073fbc7b3f.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Cantidad de días'
+		dataType: int64
+		formatString: 0
+		lineageTag: e63313e9-3198-429e-89a9-595cc50474f8
+		summarizeBy: sum
+		sourceColumn: Cantidad de días
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo combustible'
+		dataType: string
+		lineageTag: f8cfa191-b0dd-40e6-8da2-4418d6e63180
+		summarizeBy: none
+		sourceColumn: Tipo combustible
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kilometraje
+		dataType: int64
+		formatString: 0
+		lineageTag: f563644c-cceb-4745-b925-a86a580647eb
+		summarizeBy: sum
+		sourceColumn: Kilometraje
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cantidad (L)'
+		dataType: double
+		lineageTag: be12f3f7-4b8b-473a-82d2-41a91c2c9930
+		summarizeBy: sum
+		sourceColumn: Cantidad (L)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Precio
+		dataType: int64
+		formatString: 0
+		lineageTag: 4ca3c4f1-5efc-4ac9-8bc9-3abd5919f9f5
+		summarizeBy: sum
+		sourceColumn: Precio
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monto
+		dataType: double
+		lineageTag: 3370c722-a00d-41c8-b494-83daa85bd657
+		summarizeBy: sum
+		sourceColumn: Monto
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Km recorridos'
+		dataType: int64
+		formatString: 0
+		lineageTag: 396341ac-fdcb-4f56-8f30-176c115cc2e4
+		summarizeBy: sum
+		sourceColumn: Km recorridos
+
+		annotation SummarizationSetBy = Automatic
+
+	column ₡/km
+		dataType: double
+		lineageTag: 0eee9fc7-0d10-47e6-9b7c-940aee96609e
+		summarizeBy: sum
+		sourceColumn: ₡/km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column km/L
+		dataType: double
+		lineageTag: 6e6f0357-bde0-409a-8bad-31b0afda6a4f
+		summarizeBy: sum
+		sourceColumn: km/L
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Tabla1 = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents(FilePath), null, true),
+				    Tabla1_Table = Origen{[Item="Tabla1",Kind="Table"]}[Data],
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Tabla1_Table,{{"Fecha", type date}, {"Cantidad de días", Int64.Type}, {"Tipo combustible", type text}, {"Kilometraje", Int64.Type}, {"Cantidad (L)", type number}, {"Precio", Int64.Type}, {"Monto", type number}, {"Km recorridos", Int64.Type}, {"₡/km", type number}, {"km/L", type number}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
