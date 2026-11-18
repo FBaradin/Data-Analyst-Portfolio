@@ -1,12 +1,12 @@
-table Tabla1
+table Refuels
 	lineageTag: 3334f5ef-3bdf-4e1a-84d8-23f41a3299bf
 
-	column Fecha
+	column Date
 		dataType: dateTime
 		formatString: Long Date
 		lineageTag: 0b7f0aa9-b05b-445c-b512-747f0e5eaa5b
 		summarizeBy: none
-		sourceColumn: Fecha
+		sourceColumn: Date
 
 		annotation SummarizationSetBy = Automatic
 
@@ -21,47 +21,47 @@ table Tabla1
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Tipo combustible'
+	column 'Fuel Type'
 		dataType: string
 		lineageTag: f8cfa191-b0dd-40e6-8da2-4418d6e63180
 		summarizeBy: none
-		sourceColumn: Tipo combustible
+		sourceColumn: Fuel Type
 
 		annotation SummarizationSetBy = Automatic
 
-	column Kilometraje
+	column Odometer
 		dataType: int64
 		formatString: 0
 		lineageTag: f563644c-cceb-4745-b925-a86a580647eb
-		summarizeBy: sum
-		sourceColumn: Kilometraje
+		summarizeBy: none
+		sourceColumn: Odometer
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
-	column 'Cantidad (L)'
+	column Liters
 		dataType: double
 		lineageTag: be12f3f7-4b8b-473a-82d2-41a91c2c9930
 		summarizeBy: sum
-		sourceColumn: Cantidad (L)
+		sourceColumn: Liters
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column Precio
-		dataType: int64
+	column 'Price per Liter'
+		dataType: decimal
 		formatString: 0
 		lineageTag: 4ca3c4f1-5efc-4ac9-8bc9-3abd5919f9f5
-		summarizeBy: sum
-		sourceColumn: Precio
+		summarizeBy: none
+		sourceColumn: Price per Liter
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
-	column Monto
-		dataType: double
+	column Amount
+		dataType: decimal
 		lineageTag: 3370c722-a00d-41c8-b494-83daa85bd657
 		summarizeBy: sum
-		sourceColumn: Monto
+		sourceColumn: Amount
 
 		annotation SummarizationSetBy = Automatic
 
@@ -76,35 +76,18 @@ table Tabla1
 
 		annotation SummarizationSetBy = Automatic
 
-	column ₡/km
-		dataType: double
-		lineageTag: 0eee9fc7-0d10-47e6-9b7c-940aee96609e
-		summarizeBy: sum
-		sourceColumn: ₡/km
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column km/L
-		dataType: double
-		lineageTag: 6e6f0357-bde0-409a-8bad-31b0afda6a4f
-		summarizeBy: sum
-		sourceColumn: km/L
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	partition Tabla1 = m
+	partition Refuels = m
 		mode: import
 		source =
 				let
 				    Origen = Excel.Workbook(File.Contents(FilePath), null, true),
 				    Tabla1_Table = Origen{[Item="Tabla1",Kind="Table"]}[Data],
-				    #"Tipo cambiado" = Table.TransformColumnTypes(Tabla1_Table,{{"Fecha", type date}, {"Cantidad de días", Int64.Type}, {"Tipo combustible", type text}, {"Kilometraje", Int64.Type}, {"Cantidad (L)", type number}, {"Precio", Int64.Type}, {"Monto", type number}, {"Km recorridos", Int64.Type}, {"₡/km", type number}, {"km/L", type number}})
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Tabla1_Table,{{"Fecha", type date}, {"Cantidad de días", Int64.Type}, {"Tipo combustible", type text}, {"Kilometraje", Int64.Type}, {"Cantidad (L)", type number}, {"Precio", Int64.Type}, {"Monto", type number}, {"Km recorridos", Int64.Type}, {"₡/km", type number}, {"km/L", type number}}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"Fecha", "Date"}, {"Tipo combustible", "Fuel Type"}, {"Kilometraje", "Odometer"}, {"Cantidad (L)", "Liters"}, {"Precio", "Price per Liter"}, {"Monto", "Amount"}}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columnas con nombre cambiado",{{"Price per Liter", Currency.Type}, {"Amount", Currency.Type}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado1",{"₡/km", "km/L"})
 				in
-				    #"Tipo cambiado"
+				    #"Columnas quitadas"
 
 	annotation PBI_NavigationStepName = Navegación
 

@@ -5,3 +5,15 @@ expression FilePath = "C:\Users\User\Projects\Data-Analyst-Portfolio\Data-Visual
 
 	annotation PBI_ResultType = Text
 
+expression QA_Checks =
+		let
+		    Origen = Refuels,
+		    #"Personalizada agregada" = Table.AddColumn(Origen, "Monto Diff", each [Monto]-[#"Cantidad (L)"]*[Precio])
+		in
+		    #"Personalizada agregada"
+	lineageTag: 9565b343-dd78-48df-a5df-cfc25af09346
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
