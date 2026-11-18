@@ -8,9 +8,11 @@ expression FilePath = "C:\Users\User\Projects\Data-Analyst-Portfolio\Data-Visual
 expression QA_Checks =
 		let
 		    Origen = Refuels,
-		    #"Personalizada agregada" = Table.AddColumn(Origen, "Monto Diff", each [Monto]-[#"Cantidad (L)"]*[Precio])
+		    #"Personalizada agregada" = Table.AddColumn(Origen, "Monto Diff", each [Amount]-[Liters]*[Price per Liter]),
+		    #"Personalizada agregada1" = Table.AddColumn(#"Personalizada agregada", "[Km Driven] - [Km recorridos]", each [Km Driven]-[Km recorridos]),
+		    #"Personalizada agregada2" = Table.AddColumn(#"Personalizada agregada1", "[Days Since Last] - [Cantidad de días]", each [Days Since Last]-[Cantidad de días])
 		in
-		    #"Personalizada agregada"
+		    #"Personalizada agregada2"
 	lineageTag: 9565b343-dd78-48df-a5df-cfc25af09346
 
 	annotation PBI_NavigationStepName = Navegación
