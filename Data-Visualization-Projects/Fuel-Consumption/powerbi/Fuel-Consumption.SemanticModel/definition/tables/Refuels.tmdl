@@ -80,26 +80,10 @@ table Refuels
 		mode: import
 		source =
 				let
-				    Origen = Excel.Workbook(File.Contents(FilePath), null, true),
-				    Tabla1_Table = Origen{[Item="Tabla1",Kind="Table"]}[Data],
-				    #"Tipo cambiado" = Table.TransformColumnTypes(Tabla1_Table,{{"Fecha", type date}, {"Cantidad de días", Int64.Type}, {"Tipo combustible", type text}, {"Kilometraje", Int64.Type}, {"Cantidad (L)", type number}, {"Precio", Int64.Type}, {"Monto", type number}, {"Km recorridos", Int64.Type}, {"₡/km", type number}, {"km/L", type number}}),
-				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado",{{"Fecha", "Date"}, {"Tipo combustible", "Fuel Type"}, {"Kilometraje", "Odometer"}, {"Cantidad (L)", "Liters"}, {"Precio", "Price per Liter"}, {"Monto", "Amount"}}),
-				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columnas con nombre cambiado",{{"Price per Liter", Currency.Type}, {"Amount", Currency.Type}}),
-				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado1",{"₡/km", "km/L"}),
-				    #"Filas ordenadas" = Table.Sort(#"Columnas quitadas",{{"Date", Order.Ascending}}),
-				    #"Índice agregado" = Table.AddIndexColumn(#"Filas ordenadas", "Índice", 0, 1, Int64.Type),
-				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Índice agregado",{{"Índice", "Index"}}),
-				    #"Personalizada agregada" = Table.AddColumn(#"Columnas con nombre cambiado1", "Prev Index", each [Index]-1),
-				    #"Consultas combinadas" = Table.NestedJoin(#"Personalizada agregada", {"Prev Index"}, #"Personalizada agregada", {"Index"}, "Personalizada agregada", JoinKind.LeftOuter),
-				    #"Se expandió Personalizada agregada" = Table.ExpandTableColumn(#"Consultas combinadas", "Personalizada agregada", {"Date", "Odometer"}, {"Date.1", "Odometer.1"}),
-				    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Se expandió Personalizada agregada",{{"Date.1", "Prev Date"}, {"Odometer.1", "Prev Odometer"}}),
-				    #"Personalizada agregada1" = Table.AddColumn(#"Columnas con nombre cambiado2", "Km Driven", each [Odometer]-[Prev Odometer]),
-				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Personalizada agregada1",{{"Km Driven", Int64.Type}}),
-				    #"Personalizada agregada2" = Table.AddColumn(#"Tipo cambiado2", "Days Since Last", each Duration.Days([Date]-[Prev Date])),
-				    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Personalizada agregada2",{{"Days Since Last", Int64.Type}}),
-				    #"Columnas quitadas1" = Table.RemoveColumns(#"Tipo cambiado3",{"Cantidad de días", "Km recorridos", "Index", "Prev Index", "Prev Date", "Prev Odometer"})
+				    Source = Refuels_Staging,
+				    #"Removed source-calculated columns" = Table.RemoveColumns(Source, {"Cantidad de días", "Km recorridos", "Index", "Prev Index", "Prev Date", "Prev Odometer"})
 				in
-				    #"Columnas quitadas1"
+				    #"Removed source-calculated columns"
 
 	annotation PBI_NavigationStepName = Navegación
 

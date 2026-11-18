@@ -38,7 +38,7 @@ The price on each of these rows matches the fill-ups just before and after it, s
 
 `Tipo combustible` shows two distinct values, `"Súper"` (106 rows) and `"Súper "` (43 rows, with a trailing space). They are the same fuel.
 
-**Action:** trim the column in Power Query (Transform → Format → Trim). With only one real fuel type, a separate Fuel Type dimension table adds nothing to the model for now.
+**Resolved:** trimmed in `Refuels_Staging` (Transform → Format → Trim), so the column now has a single value, `Súper`. With only one real fuel type, a separate Fuel Type dimension table adds nothing to the model for now.
 
 ## Out of scope (for now)
 

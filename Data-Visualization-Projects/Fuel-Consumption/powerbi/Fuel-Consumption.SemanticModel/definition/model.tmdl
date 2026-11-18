@@ -9,7 +9,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_QueryOrder = ["Refuels","FilePath","QA_Checks"]
+annotation PBI_QueryOrder = ["Refuels","FilePath","QA_Checks","Refuels_Staging"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
