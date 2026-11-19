@@ -20,7 +20,7 @@ table _Measures
 		formatString: 0
 		lineageTag: 1dc6ae6f-0449-4c43-8208-16debba25e55
 
-	measure 'Liter Consumed' =
+	measure 'Liters Consumed' =
 			CALCULATE([Total Liters],
 			not ISBLANK(Refuels[Km Driven])
 			)
@@ -28,7 +28,7 @@ table _Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Km per Liter' = DIVIDE([Total Km],[Liter Consumed])
+	measure 'Km per Liter' = DIVIDE([Total Km],[Liters Consumed])
 		formatString: 0.00
 		lineageTag: a6e471c1-d1fa-42b7-b8e6-8905f072fd26
 
@@ -53,6 +53,14 @@ table _Measures
 	measure 'Odometer (End of Period)' = LASTNONBLANKVALUE('Date'[Date],MAX(Refuels[Odometer]))
 		formatString: 0
 		lineageTag: 1442c5d1-bdac-4b86-b7fe-63a68bbbe4a6
+
+	measure 'Total Days' = sum(Refuels[Days Since Last])
+		formatString: 0
+		lineageTag: 76a1c1a0-7433-4e43-9c79-cb1127dfe3b6
+
+	measure 'Km per Day' = DIVIDE([Total Km],[Total Days])
+		formatString: 0.0
+		lineageTag: d8c8b088-6a5a-4ef6-828a-b7c66bff6f5e
 
 	partition _Measures = m
 		mode: import
