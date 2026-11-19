@@ -9,12 +9,13 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_QueryOrder = ["Refuels","FilePath","QA_Checks","Refuels_Staging"]
+annotation PBI_QueryOrder = ["Refuels","FilePath","QA_Checks","Refuels_Staging","_Measures"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
 ref table Refuels
 ref table Date
+ref table _Measures
 
 ref cultureInfo es-CR
 

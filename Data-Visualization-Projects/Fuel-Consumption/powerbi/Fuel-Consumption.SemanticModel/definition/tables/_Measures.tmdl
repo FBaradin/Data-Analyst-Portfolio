@@ -1,0 +1,68 @@
+table _Measures
+	lineageTag: a32547b7-0953-4487-a563-fb5d68fb002d
+
+	measure 'Total Liters' = SUM(Refuels[Liters])
+		lineageTag: 8ca4464d-6e58-4c35-8c0d-160a6481603a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Amount' = sum(Refuels[Amount])
+		formatString: "₡"#,0;-"₡"#,0;"₡"#,0
+		lineageTag: 64d79a68-2047-4893-93ab-ad67f34db220
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CR"}
+
+	measure 'Total Km' = SUM(Refuels[Km Driven])
+		formatString: 0
+		lineageTag: 6c5e6c9d-d590-4a81-bb57-bcfe982cba33
+
+	measure Fill-ups = COUNTROWS(Refuels)
+		formatString: 0
+		lineageTag: 1dc6ae6f-0449-4c43-8208-16debba25e55
+
+	measure 'Liter Consumed' =
+			CALCULATE([Total Liters],
+			not ISBLANK(Refuels[Km Driven])
+			)
+		lineageTag: cb211342-5979-41ec-8797-035a60820b16
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Km per Liter' = DIVIDE([Total Km],[Liter Consumed])
+		formatString: 0.00
+		lineageTag: a6e471c1-d1fa-42b7-b8e6-8905f072fd26
+
+	measure 'Avg Price per Liter' = DIVIDE([Total Amount],[Total Liters])
+		formatString: "₡"#,0;-"₡"#,0;"₡"#,0
+		lineageTag: 9dd7b81a-10e3-4429-8180-58722a1e7159
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CR"}
+
+	measure 'Cost per Km' = ```
+			
+			    Divide(
+			        CALCULATE([Total Amount], not ISBLANK(Refuels[Km Driven])),
+			        [Total Km]
+			    )
+			```
+		formatString: "₡"#,0.0;-"₡"#,0.0;"₡"#,0.0
+		lineageTag: fa81b786-d889-484c-9969-77674e9e15f5
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CR"}
+
+	measure 'Odometer (End of Period)' = LASTNONBLANKVALUE('Date'[Date],MAX(Refuels[Odometer]))
+		formatString: 0
+		lineageTag: 1442c5d1-bdac-4b86-b7fe-63a68bbbe4a6
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
