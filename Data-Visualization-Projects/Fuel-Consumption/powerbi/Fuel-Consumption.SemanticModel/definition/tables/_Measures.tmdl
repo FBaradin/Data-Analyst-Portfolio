@@ -62,6 +62,32 @@ table _Measures
 		formatString: 0.0
 		lineageTag: d8c8b088-6a5a-4ef6-828a-b7c66bff6f5e
 
+	measure 'Amount YTD' = TOTALYTD([Total Amount],'Date'[Date])
+		formatString: "₡"#,0;-"₡"#,0;"₡"#,0
+		lineageTag: a7b3189d-0e01-4de0-9c07-5b25bd1b4269
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CR"}
+
+	measure 'Amount PY' = CALCULATE([Total Amount], SAMEPERIODLASTYEAR('Date'[Date]))
+		formatString: "₡"#,0;-"₡"#,0;"₡"#,0
+		lineageTag: 4dcc7153-826e-47ec-9fd0-439f2a1b7f14
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CR"}
+
+	measure 'Amount YoY %' = DIVIDE([Total Amount]-[Amount PY], [Amount PY])
+		formatString: 0.00
+		lineageTag: 8a2af5e1-9ea7-4355-975e-9aedb79478b4
+
+	measure 'Km per Liter (3M Rolling)' =
+			
+			CALCULATE(
+			    [Km per Liter],
+			    DATESINPERIOD('Date'[Date],MAX('Date'[Date]),-3,MONTH)
+			)
+		lineageTag: 7ea0878e-27ba-44cb-93ec-6d1cb38d44db
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition _Measures = m
 		mode: import
 		source =
